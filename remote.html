@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Switcher: Remote</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./bootstrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/switcher.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    
+    <script src="javascripts/lib/head.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://localhost:3030/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+    
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Switcher: Remote: <span id='site_title'></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span-one-third">
+          <h2>Instructions</h2>
+          <p>Enter the URL to change the display to.</p>
+       </div>
+       <div class="span-two-thirds">
+         <form id='change_form' action="remote_submit" method="get" accept-charset="utf-8">
+          <fieldset>
+            <div class="clearfix">
+               <label for="url_change">URL</label>
+               <div class="input">
+                 <input class="xlarge" id="url_change" name="url_change" size="100" type="text">
+                 <input type="submit" value="Go &rarr;">
+               </div>
+             </div>
+          </fieldset>
+         </form>
+       </div>
+      </div>
+
+      <footer>
+        
+      </footer>
+
+    </div> 
+    <!-- /container -->
+    <script type="text/javascript" charset="utf-8">
+      head.ready('application', function(){
+        var socket = io.connect('http://localhost:3030');
+        
+        $('#change_form').submit(function(e){
+          e.preventDefault();
+          socket.emit('change location', {url: $('#url_change').val()})
+        });
+        
+      });
+      
+      head.js(
+        {jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'},
+        {application: 'javascripts/src/application.js'}
+      );
+    </script>
+  </body>
+</html>
