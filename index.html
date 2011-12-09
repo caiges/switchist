@@ -1,21 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-    <title>Switcher</title>
+    <meta charset="utf-8">
+    <title>Switcher: Setup</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./bootstrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/switcher2.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    
     <script src="javascripts/lib/head.min.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="stylesheets/switcher.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
   </head>
+
   <body>
-    
-    <iframe id='framer' src="http://www.corpedia.com"></iframe>
-    <div id="switcher_nav"></div>
-    <div id="switcher_control">
-      <a id='pause_button' href="#pause">pause</a>
-      <a id='unpause_button' href="#unpause">unpause</a>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Switcher: Display</a>
+          <!--
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
     </div>
-    
-    <script>
+
+    <div class="container fillscreen">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span-24">
+          <iframe id='framer' src="http://www.corpedia.com"></iframe>
+          <div id="switcher_nav"></div>
+          <div id="switcher_control">
+            <a id='pause_button' href="#pause">pause</a>
+            <a id='unpause_button' href="#unpause">unpause</a>
+          </div>
+       </div>
+      </div>
+
+      <footer>
+        <p>&copy; Corpedia 2011</p>
+      </footer>
+
+    </div> <!-- /container -->
+    <script type="text/javascript" charset="utf-8">
       head.ready('application', function(){
         Switcher.init('framer');
       });
