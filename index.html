@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <title>Switcher</title>
+    <script src="javascripts/lib/head.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="stylesheets/switcher.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    
+    <iframe id='framer' src="http://www.corpedia.com"></iframe>
+    <div id="switcher_nav"></div>
+    <div id="switcher_control">
+      <a id='pause_button' href="#pause">pause</a>
+      <a id='unpause_button' href="#unpause">unpause</a>
+    </div>
+    
+    <script>
+      head.ready('application', function(){
+        Switcher.init('framer');
+      });
+      
+      head.js(
+        {jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'},
+        {application: 'javascripts/src/application.js'}
+      );
+    </script>
+  </body>
+</html>

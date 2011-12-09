@@ -1,0 +1,34 @@
+#framer{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#switcher_nav, #switcher_control{
+  position: absolute;
+  bottom: 0;
+  z-index: 300;
+}
+
+#switcher_control{
+  right: 0px;
+}
+
+  #switcher_nav > a, #switcher_control > a{
+    margin: 0 5px;
+    padding: 3px;
+    border-radius: 3px;
+    font: normal normal bold 12px/1.5em Arial, sans-serif;
+    text-decoration: none;
+    background-color: #333;
+    color: #FFF;
+  }
+
+  #switcher_nav > a.highlighted{
+    background-color: #3C6;
+  }
+  
+.fillscreen{
+  height: 80%;
+}
